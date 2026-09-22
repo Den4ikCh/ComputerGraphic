@@ -22,7 +22,7 @@ public class DrawPanel extends JPanel {
         Graphics2D g = (Graphics2D) gr;
         super.paint(g);
 
-        drawSun(g, getWidth() / 2, getHeight() / 2, 70 + 40 * Math.sin(r * 0.1), 100, 30, Color.ORANGE);
+        drawSun(g, getWidth() / 2, getHeight() / 2, (int) (70 + 40 * Math.sin(r * 0.1)), 100, 30, Color.ORANGE);
     }
 
     public static void drawSun(Graphics2D g, int x, int y, int r, int l, int n, Color c) {
