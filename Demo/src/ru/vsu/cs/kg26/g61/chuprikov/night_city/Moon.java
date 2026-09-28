@@ -15,13 +15,17 @@ public class Moon {
     }
 
     public void draw(Graphics2D g) {
-        int steps = Math.max(1, (haloRadius - radius) / 5);
-        for (int i = steps; i > 0; i--) {
-            int r = radius + (haloRadius - radius) * i / steps;
-            int alpha = (int) (40 * (1 - (float) i / steps));
-            g.setColor(new Color(255, 255, 255, alpha));
-            g.fillOval(x - r, y - r, r * 2, r * 2);
-        }
+        float[] dist = {0f, 0.5f, 1f};
+        Color[] colors = {
+                new Color(255, 255, 255, 120),
+                new Color(255, 255, 255, 60),
+                new Color(255, 255, 255, 0)
+        };
+        RadialGradientPaint glow = new RadialGradientPaint(
+                new Point(x, y), haloRadius, dist, colors
+        );
+        g.setPaint(glow);
+        g.fillOval(x - haloRadius, y - haloRadius, haloRadius * 2, haloRadius * 2);
 
         g.setColor(new Color(245, 245, 255));
         g.fillOval(x - radius, y - radius, radius * 2, radius * 2);

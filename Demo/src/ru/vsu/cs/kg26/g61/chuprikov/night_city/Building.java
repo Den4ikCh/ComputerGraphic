@@ -3,12 +3,14 @@ package ru.vsu.cs.kg26.g61.chuprikov.night_city;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Building {
     private int x, y;
     private int width, height;
     private Color color;
     private List<Window> windows;
+    private Random rnd = new Random();
 
     public Building(int x, int y, int width, int height, Color color) {
         this.x = x;
@@ -42,6 +44,9 @@ public class Building {
     }
 
     public void update() {
+        if (!windows.isEmpty() && rnd.nextInt(1000) < 2) {
+            windows.get(rnd.nextInt(windows.size())).change();
+        }
     }
 
     public void draw(Graphics2D g) {

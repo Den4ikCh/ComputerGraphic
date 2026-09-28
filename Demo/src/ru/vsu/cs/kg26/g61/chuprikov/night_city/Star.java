@@ -13,7 +13,7 @@ public class Star {
         this.y = y;
         this.size = size;
         brightness = Math.random();
-        blinkSpeed = Math.random();
+        blinkSpeed = Math.random() / 50;
     }
 
     public void update() {
