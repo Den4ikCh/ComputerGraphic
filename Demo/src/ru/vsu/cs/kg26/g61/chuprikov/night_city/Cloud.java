@@ -19,15 +19,16 @@ public class Cloud {
 
     public void update(int width) {
         x -= speed;
-        if (x + width < 0) {
-            x = width + this.width;
+        if (x + this.width < 0) {
+            x = width;
+            System.out.println(x);
         }
     }
 
     public void draw(Graphics2D g) {
         g.setColor(color);
         g.fillOval(x, y + height / 3, width / 2, height / 2);
-        g.fillOval(x + width / 4, y, width / 2, height);
+        g.fillOval(x + width / 4, y - height / 10, width / 2, height);
         g.fillOval(x + width / 2, y + height / 4, width / 2, height / 2);
     }
 }

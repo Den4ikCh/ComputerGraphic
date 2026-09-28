@@ -1,5 +1,7 @@
 package ru.vsu.cs.kg26.g61.chuprikov.night_city;
 
+import org.w3c.dom.ls.LSOutput;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
